@@ -1,0 +1,18 @@
+.contact-icons::after {
+  content: "";
+  height: 100px;
+  width: 2px;
+  background-color: #212529d6;
+}
+
+.contact-icons {
+  height: 120%;
+  i {
+    color: #212529d6 !important;
+    transition: all 0.5s;
+  }
+  i:hover {
+    color: #dc3545 !important;
+    transform: translateY(-5px);
+  }
+}

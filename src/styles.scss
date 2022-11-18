@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap");
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+h1,
+nav {
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --angular-color: #dd0031;
+  --javascript-color: #f7df1c;
+  --react-color: #5ed3f3;
+  --sass-color: #cc6699;
+  --html-color: #e44d27;
+  --css-color: #1572b6;
+  --bootstrap-color: #563d7c;
+  --git-color: #f05032;
+  --npm-color: #cb0000;
+  --fontawesome-color: #538dd7;
+  --php-color: #7a86b8;
+}
+
+.angular-color {
+  color: var(--angular-color);
+}
+.javascript-color {
+  color: var(--javascript-color);
+}
+.react-color {
+  color: var(--react-color);
+}
+.sass-color {
+  color: var(--sass-color);
+}
+.html-color {
+  color: var(--html-color);
+}
+.css-color {
+  color: var(--css-color);
+}
+.bootstrap-color {
+  color: var(--bootstrap-color);
+}
+.git-color {
+  color: var(--git-color);
+}
+.npm-color {
+  color: var(--npm-color);
+}
+.fontawesome-color {
+  color: var(--fontawesome-color);
+}
+.php-color {
+  color: var(--php-color);
+}
+.font-style {
+  letter-spacing: 0.5px;
+}

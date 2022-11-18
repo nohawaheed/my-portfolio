@@ -1,0 +1,10 @@
+.layer {
+  opacity: 0;
+  background-color: rgba(120, 112, 112, 0.797);
+  transition: all 0.5s;
+}
+.card:hover {
+  .layer {
+    opacity: 1;
+  }
+}
