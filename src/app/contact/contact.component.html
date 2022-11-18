@@ -110,10 +110,10 @@
         <p *ngIf="contactMeForm.get('message')?.errors?.['required']">
           message is required.
         </p>
-        <p *ngIf="contactMeForm.get('message')?.errors?.['minLength']">
+        <p *ngIf="contactMeForm.get('message')?.errors?.['minlength']">
           message min length is 50 characters.
         </p>
-        <p *ngIf="contactMeForm.get('message')?.errors?.['maxLength']">
+        <p *ngIf="contactMeForm.get('message')?.errors?.['maxlength']">
           message max length is 500 characters.
         </p>
       </div>
