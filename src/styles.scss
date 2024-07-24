@@ -23,6 +23,7 @@ body {
   --npm-color: #cb0000;
   --fontawesome-color: #538dd7;
   --php-color: #7a86b8;
+  --node-js-color: #5fa04e;
 }
 
 .angular-color {
@@ -57,6 +58,9 @@ body {
 }
 .php-color {
   color: var(--php-color);
+}
+.node-js-color {
+  color: var(--node-js-color);
 }
 .font-style {
   letter-spacing: 0.5px;
