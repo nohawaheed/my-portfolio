@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { GsapService } from '../gsap.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   screenWidth: number = 0;
   showIcons: boolean = window.matchMedia('(min-width: 768px)').matches;
-  constructor() {}
+  constructor(private _gsapService: GsapService) { }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.screenWidth = window.innerWidth;
     if (this.screenWidth < 768) {
@@ -20,5 +21,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  animateImage(event: Event) {
+    this._gsapService.animateImage(event)
+  }
 }

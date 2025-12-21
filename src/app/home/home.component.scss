@@ -12,7 +12,13 @@
     transition: all 0.5s;
   }
   i:hover {
-    color: #dc3545 !important;
+    color: var(--primary-color) !important;
     transform: translateY(-5px);
+  }
+}
+
+@media screen and (min-width: '375px') {
+  .highlight {
+    text-underline-offset: unset;
   }
 }
