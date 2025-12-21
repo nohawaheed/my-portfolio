@@ -6,6 +6,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { ContactMeService } from './../contact-me.service';
+import { GsapService } from '../gsap.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,8 +16,9 @@ import { ContactMeService } from './../contact-me.service';
 export class ContactComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
-    private _contactMeService: ContactMeService
-  ) {}
+    private _contactMeService: ContactMeService,
+    private _gsapService: GsapService
+  ) { }
   formSubmitSuccess: string = '';
   formSubmitError: string = '';
   hide: boolean = false;
@@ -38,7 +40,7 @@ export class ContactComponent implements OnInit {
       Validators.maxLength(500),
     ]),
   });
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   hideMessage() {
     setTimeout(() => {
       this.hide = true;
@@ -54,5 +56,10 @@ export class ContactComponent implements OnInit {
       this.hideMessage();
       this.contactMeForm.reset();
     }
+  }
+
+  onMapLoad(event: Event) {
+    const iframe = event.target as HTMLElement;
+    this._gsapService.animateMap(iframe);
   }
 }
