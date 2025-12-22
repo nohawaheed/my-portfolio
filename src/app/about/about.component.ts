@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { gsap } from "gsap";
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { GsapService } from '../gsap.service';
 
 @Component({
   selector: 'app-about',
@@ -8,42 +8,15 @@ import { gsap } from "gsap";
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _gsapService: GsapService) { }
 
   @ViewChild('circleContainer') circleContainer!: ElementRef<HTMLElement>;
   ngOnInit(): void {
   }
-  ngAfterViewInit() {
-    const items: HTMLElement[] = Array.from(
-      this.circleContainer.nativeElement.querySelectorAll('.item')
-    );
+  @ViewChildren('icon') icons!: QueryList<ElementRef<HTMLElement>>;
 
-    const radius = 150; // distance from container center
-    const total = items.length;
-
-    items.forEach((item, index) => {
-      const angle = (index / total) * Math.PI * 2;
-
-      // position icons in a circle relative to container
-      gsap.set(item, {
-        x: Math.cos(angle) * radius,
-        y: Math.sin(angle) * radius,
-      });
-
-      // subtle floating
-      this.float(item);
-    });
-  }
-
-  float(element: HTMLElement) {
-    gsap.to(element, {
-      x: `+=${gsap.utils.random(-15, 15)}`,
-      y: `+=${gsap.utils.random(-15, 15)}`,
-      duration: gsap.utils.random(3, 6),
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      onComplete: () => this.float(element),
-    });
+  ngAfterViewInit(): void {
+    const elements: HTMLElement[] = this.icons.toArray().map(i => i.nativeElement);
+    this._gsapService.animateSkillIcons(elements);
   }
 }
