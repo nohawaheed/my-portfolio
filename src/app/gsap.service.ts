@@ -8,14 +8,18 @@ export class GsapService {
 
   constructor() { }
 
-  animateImage(event: Event) {
-    const img = event.target as HTMLElement;
-
+  animateImage(img: HTMLElement) {
     // Animate opacity and scale
     gsap.fromTo(
       img,
       { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' }
+      {
+        opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out',
+        onComplete: () => {
+          // free memory
+          img.style.willChange = 'auto';
+        }
+      },
     );
   }
 
@@ -23,7 +27,13 @@ export class GsapService {
     gsap.fromTo(
       iframe,
       { opacity: 0 },
-      { opacity: 1, duration: 0.4, ease: 'power1.out' }
+      {
+        opacity: 1, duration: 0.4, ease: 'power1.out',
+        onComplete: () => {
+          // free memory
+          iframe.style.willChange = 'auto';
+        }
+      }
     );
   }
 
@@ -46,4 +56,13 @@ export class GsapService {
     );
   }
 
+  animateSkillIcons(elements: HTMLElement[]) {
+    gsap.from(elements, {
+      scale: 0.85,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.08
+    });
+  }
 }
