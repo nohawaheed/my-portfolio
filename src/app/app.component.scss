@@ -1,5 +1,4 @@
 
 main {
-  // 96px is the sum of both navbar and footer height
-  min-height: calc(100vh - 96px);
+  padding-bottom: 40px; /* height of footer */
 }
