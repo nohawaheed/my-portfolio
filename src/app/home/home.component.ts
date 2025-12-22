@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void { }
 
   animateImage(event: Event) {
-    this._gsapService.animateImage(event)
+    const img = event.target as HTMLElement;
+    this._gsapService.animateImage(img)
   }
 }

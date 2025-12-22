@@ -17,8 +17,20 @@
   }
 }
 
-@media screen and (min-width: '375px') {
-  .highlight {
-    text-underline-offset: unset;
+.portfolio-img {
+  opacity: 0;
+  will-change: transform, opacity;
+  transform-origin: center bottom;
+}
+
+.btn {
+  a {
+    color: var(--white-color);
+  }
+  background-color: var(--bs-body-color);
+  border-color: var(--bs-body-color);
+  &:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
   }
 }
