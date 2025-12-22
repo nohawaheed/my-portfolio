@@ -1,63 +1,56 @@
-<section aria-label="work-projects row">
-  <div class="pt-md-3 px-md-3 px-2">
-    <owl-carousel-o [options]="customOptions"
-      class="col-12 m-auto d-flex justify-content-center align-items-center mt-5">
-      <ng-container *ngFor="let project of projects">
-        <ng-template carouselSlide>
-          <div class="card me-3 ms-3">
-            <img (load)="onCardImageLoad($event)" [src]="project.projectImage" class="card-img-top"
-              [alt]="project.projectName" />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">{{ project.projectName }}</h5>
-              <p class="card-text">{{ project.projectDetails }}</p>
+<section aria-label="work-projects" class="row g-3 py-4">
+  <div *ngFor="let project of projects" class="col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="card">
+      <img (load)="onCardImageLoad($event)" [src]="project.projectImage" class="card-img-top"
+        [alt]="project.projectName" />
+      <div class="card-body">
+        <h5 class="card-title fw-bold">{{ project.projectName }}</h5>
+        <p class="card-text">{{ project.projectDetails }}</p>
 
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center">
-                  <ul class="d-flex list-unstyled fa-fw fa-2x m-0" *ngFor="let tool of project.tools">
-                    <li>
-                      <i class="{{ tool.bootstrap }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class=" {{ tool.npm }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class=" {{ tool.angular }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class=" {{ tool.javascript }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class="{{ tool.fontawesome }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class="{{ tool.react }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class="{{ tool.html }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class="{{ tool.css }} fa-xs"></i>
-                    </li>
-                    <li>
-                      <i class="{{ tool.sass }} fa-xs"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="w-100 h-100 position-absolute rounded layer">
-              <div *ngFor="let link of project.links" class="d-flex justify-content-center align-items-center h-100">
-                <a href="{{ link.github }}" target="_blank" title="github" class="pe-3">
-                  <i class="fa-brands fa-github fa-2xl text-white"></i>
-                </a>
-                <a href="{{ link.website }}" target="_blank" title="live website">
-                  <i class="fa-solid fa-arrow-up-right-from-square text-white fa-2xl"></i>
-                </a>
-              </div>
-            </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <ul class="d-flex list-unstyled fa-fw fa-2x m-0" *ngFor="let tool of project.tools">
+              <li>
+                <i class="{{ tool.bootstrap }} fa-xs"></i>
+              </li>
+              <li>
+                <i class=" {{ tool.npm }} fa-xs"></i>
+              </li>
+              <li>
+                <i class=" {{ tool.angular }} fa-xs"></i>
+              </li>
+              <li>
+                <i class=" {{ tool.javascript }} fa-xs"></i>
+              </li>
+              <li>
+                <i class="{{ tool.fontawesome }} fa-xs"></i>
+              </li>
+              <li>
+                <i class="{{ tool.react }} fa-xs"></i>
+              </li>
+              <li>
+                <i class="{{ tool.html }} fa-xs"></i>
+              </li>
+              <li>
+                <i class="{{ tool.css }} fa-xs"></i>
+              </li>
+              <li>
+                <i class="{{ tool.sass }} fa-xs"></i>
+              </li>
+            </ul>
           </div>
-        </ng-template>
-      </ng-container>
-    </owl-carousel-o>
+        </div>
+      </div>
+      <div class="w-100 h-100 position-absolute rounded layer">
+        <div *ngFor="let link of project.links" class="d-flex justify-content-center align-items-center h-100">
+          <a href="{{ link.github }}" target="_blank" title="github" class="pe-3">
+            <i class="fa-brands fa-github fa-2xl text-white"></i>
+          </a>
+          <a href="{{ link.website }}" target="_blank" title="live website">
+            <i class="fa-solid fa-arrow-up-right-from-square text-white fa-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
