@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap");
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 h1,
 nav {
   font-family: "Playfair Display", serif;
@@ -25,6 +25,10 @@ body {
   --php-color: #7a86b8;
   --node-js-color: #5fa04e;
   --primary-color:#dc3545;
+  --white-color: #ffffff;
+  --flutter-color: #02569B;
+  --github-color: #181717;
+  --docker-color: #1D63ED;
 }
 
 .angular-color {
@@ -63,14 +67,19 @@ body {
 .node-js-color {
   color: var(--node-js-color);
 }
+.flutter-color {
+color: var(--flutter-color);
+}
+.github-color {
+  color: var(--github-color);
+}
+.docker-color {
+  color: var(--docker-color);
+}
 .font-style {
   letter-spacing: 0.5px;
 }
 .highlight {
- text-decoration-line: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--primary-color);
-  text-underline-offset: 8px;
   font-weight: 600;
     background-image: linear-gradient(
     to right,
@@ -78,6 +87,6 @@ body {
     var(--primary-color) 100%
   );
   background-repeat: repeat-x;
-  background-size: 8px 2px;
-  background-position: 0 100%;
+  background-size: 8px 1.5px;
+  background-position: 0 95%;
 }
