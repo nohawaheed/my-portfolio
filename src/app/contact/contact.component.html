@@ -1,7 +1,7 @@
 <form aria-label="contact-me" [formGroup]="contactMeForm" (ngSubmit)="formSubmit(contactMeForm)"
   class="row justify-content-center align-items-center py-2">
   <div class="text-center mb-4">
-    <h2 class="display-3">Contact <span class="text-danger highlight">Me</span></h2>
+    <h2 class="display-3">Contact <span class="text-danger fw-semibold">Me</span></h2>
   </div>
   <div class="col-md-5">
     <div *ngIf="formSubmitSuccess" class="pb-3 text-success" [class.hide]="hide">
