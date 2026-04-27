@@ -34,3 +34,7 @@
     border-color: var(--primary-color);
   }
 }
+
+.main-content {
+  height: calc(100vh - 56px);
+}

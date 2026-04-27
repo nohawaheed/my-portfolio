@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private activatedRoute: ActivatedRoute) { }
+  ngOnInit(): void {
+    this.activatedRoute.fragment.subscribe((value) => {
+      if (value) {
+        this.jumbTo(value);
+      }
+    })
+  }
+  jumbTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+  }
 }

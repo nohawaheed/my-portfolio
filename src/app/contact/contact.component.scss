@@ -9,3 +9,7 @@ iframe {
   will-change: transform, opacity;
   transform-origin: center bottom;
 }
+.btn:disabled {
+  cursor: not-allowed !important;
+  pointer-events: auto !important; /* Re-enables the cursor on hover */
+}

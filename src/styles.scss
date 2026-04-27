@@ -24,11 +24,11 @@ body {
   --fontawesome-color: #538dd7;
   --php-color: #7a86b8;
   --node-js-color: #5fa04e;
-  --primary-color:#dc3545;
+  --primary-color: #dc3545;
   --white-color: #ffffff;
-  --flutter-color: #02569B;
+  --flutter-color: #02569b;
   --github-color: #181717;
-  --docker-color: #1D63ED;
+  --docker-color: #1d63ed;
 }
 
 .angular-color {
@@ -68,7 +68,7 @@ body {
   color: var(--node-js-color);
 }
 .flutter-color {
-color: var(--flutter-color);
+  color: var(--flutter-color);
 }
 .github-color {
   color: var(--github-color);
@@ -81,7 +81,7 @@ color: var(--flutter-color);
 }
 .highlight {
   font-weight: 600;
-    background-image: linear-gradient(
+  background-image: linear-gradient(
     to right,
     var(--primary-color) 0%,
     var(--primary-color) 100%

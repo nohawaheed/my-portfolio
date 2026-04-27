@@ -47,7 +47,6 @@ export class ContactComponent implements OnInit {
     }, 5000);
   }
   formSubmit(formValues: FormGroup) {
-    // console.log(this.contactMeForm.value);
     if (this.contactMeForm.valid) {
       this._contactMeService.sendFormValuesToEmail(formValues.value).subscribe({
         next: (response) => (this.formSubmitSuccess = response.message),
